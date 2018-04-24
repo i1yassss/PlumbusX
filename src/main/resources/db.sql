@@ -1,0 +1,1 @@
+INSERT INTO news VALUES (1, 'first news', 'this is first news');

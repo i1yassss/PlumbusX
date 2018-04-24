@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="PlumbusX:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="PlumbusX.war">
+      <element id="artifact" artifact-name="PlumbusX:war exploded" />
+    </root>
+  </artifact>
+</component>
