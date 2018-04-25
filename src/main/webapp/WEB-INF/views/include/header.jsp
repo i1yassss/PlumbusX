@@ -32,15 +32,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand text-uppercase" href="#">CDIO Platform </a>
+                <a class="navbar-brand text-uppercase" href="#">PlumbusX </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
-                    <!--<li><a href="/all-meetings">All Meetings</a></li>-->
+                    <li><a href="/all-meetings">All Meetings</a></li>
                     <sec:authorize access="hasRole('ROLE_STUDENT')">
-                        <li><a href="/ungroup-meetings">Meetings</a></li>
+                        <li><a href="/ungroup-meetings">New Meetings</a></li>
                         <li><a href="/list-users">Teachers</a></li>
                     </sec:authorize>
                     <sec:authorize access="hasRole('ROLE_TEACHER')">

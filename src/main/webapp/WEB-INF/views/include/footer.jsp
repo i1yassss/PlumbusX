@@ -13,7 +13,7 @@
 
 <footer class="footer text-center">
     <div class="container">
-        <small>© Copyright 2015. Crafted with love by <a href="https://www.twitter.com/maridlcrmn">@maridlcrmn</a></small>
+        <small>© Kazan Federal University <a href="#">@ilias_zhe</a></small>
     </div>
 </footer>
 

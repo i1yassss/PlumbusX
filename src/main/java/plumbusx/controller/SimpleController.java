@@ -58,8 +58,8 @@ public class SimpleController {
 
     @RequestMapping(value = "/list-users", method = RequestMethod.GET)
     public String index(Model model, @ModelAttribute("users") User user) {
-        model.addAttribute("listStudents", userService.getAllByRole(roleRepository.findOne((int) 3L)));
-        model.addAttribute("listTeachers", userService.getAllByRole(roleRepository.findOne((int) 1L)));
+        model.addAttribute("listStudents", userService.getAllByRole(roleRepository.findOne((int) 1L)));
+        model.addAttribute("listTeachers", userService.getAllByRole(roleRepository.findOne((int) 2L)));
         return "list-users";
     }
 }
