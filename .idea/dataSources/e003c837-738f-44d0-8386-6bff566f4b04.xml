@@ -815,60 +815,66 @@
     <table id="205" parent="5" name="meetings">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="206" parent="5" name="roles">
+    <table id="206" parent="5" name="projects">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="207" parent="5" name="user_meeting">
+    <table id="207" parent="5" name="roles">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="208" parent="5" name="user_roles">
+    <table id="208" parent="5" name="user_meeting">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="209" parent="5" name="users">
+    <table id="209" parent="5" name="user_projects">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="210" parent="204" name="id">
+    <table id="210" parent="5" name="user_roles">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="211" parent="5" name="users">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="212" parent="204" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="211" parent="204" name="skill">
+    <column id="213" parent="204" name="skill">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="212" parent="204" name="user_id">
+    <column id="214" parent="204" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="213" parent="204" name="competence_id_uindex">
+    <index id="215" parent="204" name="competence_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="214" parent="204" name="competence_is_uindex">
+    <index id="216" parent="204" name="competence_is_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="215" parent="204" name="competence_users_id_fk">
+    <index id="217" parent="204" name="competence_users_id_fk">
       <ColNames>user_id</ColNames>
     </index>
-    <key id="216" parent="204" name="PRIMARY">
+    <key id="218" parent="204" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="217" parent="204" name="competence_id_uindex">
+    <key id="219" parent="204" name="competence_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>competence_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="218" parent="204" name="competence_is_uindex">
+    <key id="220" parent="204" name="competence_is_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>competence_is_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="219" parent="204" name="competence_users_id_fk">
+    <foreign-key id="221" parent="204" name="competence_users_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>plumbusx</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -876,47 +882,47 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="220" parent="205" name="id">
+    <column id="222" parent="205" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="221" parent="205" name="mname">
+    <column id="223" parent="205" name="mname">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="222" parent="205" name="typeofmeeting">
+    <column id="224" parent="205" name="typeofmeeting">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="223" parent="205" name="description">
+    <column id="225" parent="205" name="description">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="224" parent="205" name="timedate">
+    <column id="226" parent="205" name="timedate">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="225" parent="205" name="author_id">
+    <column id="227" parent="205" name="author_id">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="226" parent="205" name="meetings_users_id_fk">
+    <index id="228" parent="205" name="meetings_users_id_fk">
       <ColNames>author_id</ColNames>
     </index>
-    <key id="227" parent="205" name="PRIMARY">
+    <key id="229" parent="205" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="228" parent="205" name="meetings_users_id_fk">
+    <foreign-key id="230" parent="205" name="meetings_users_id_fk">
       <ColNames>author_id</ColNames>
       <RefSchemaName>plumbusx</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -924,48 +930,89 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="229" parent="206" name="id">
+    <column id="231" parent="206" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="206" name="name">
+    <column id="232" parent="206" name="project_name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="231" parent="206" name="roles_id_uindex">
+    <column id="233" parent="206" name="author_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="234" parent="206" name="projects_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="232" parent="206" name="PRIMARY">
+    <index id="235" parent="206" name="projects_users_id_fk">
+      <ColNames>author_id</ColNames>
+    </index>
+    <key id="236" parent="206" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="233" parent="206" name="roles_id_uindex">
+    <key id="237" parent="206" name="projects_id_uindex">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>projects_id_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="238" parent="206" name="projects_users_id_fk">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>plumbusx</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="239" parent="207" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="207" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="241" parent="207" name="roles_id_uindex">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="242" parent="207" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="243" parent="207" name="roles_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>roles_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="234" parent="207" name="user_id">
+    <column id="244" parent="208" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="207" name="meeting_id">
+    <column id="245" parent="208" name="meeting_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="236" parent="207" name="user_meeting_users_id_fk">
+    <index id="246" parent="208" name="user_meeting_users_id_fk">
       <ColNames>user_id</ColNames>
     </index>
-    <index id="237" parent="207" name="user_meeting_meetings_id_fk">
+    <index id="247" parent="208" name="user_meeting_meetings_id_fk">
       <ColNames>meeting_id</ColNames>
     </index>
-    <foreign-key id="238" parent="207" name="user_meeting_users_id_fk">
+    <foreign-key id="248" parent="208" name="user_meeting_users_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>plumbusx</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -973,7 +1020,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="239" parent="207" name="user_meeting_meetings_id_fk">
+    <foreign-key id="249" parent="208" name="user_meeting_meetings_id_fk">
       <ColNames>meeting_id</ColNames>
       <RefSchemaName>plumbusx</RefSchemaName>
       <RefTableName>meetings</RefTableName>
@@ -981,23 +1028,23 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="240" parent="208" name="user_id">
+    <column id="250" parent="209" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="208" name="role_id">
+    <column id="251" parent="209" name="project_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="242" parent="208" name="user_roles_users_id_fk">
+    <index id="252" parent="209" name="user_projects_users_id_fk">
       <ColNames>user_id</ColNames>
     </index>
-    <index id="243" parent="208" name="user_roles_roles_id_fk">
-      <ColNames>role_id</ColNames>
+    <index id="253" parent="209" name="user_projects_projects_id_fk">
+      <ColNames>project_id</ColNames>
     </index>
-    <foreign-key id="244" parent="208" name="user_roles_users_id_fk">
+    <foreign-key id="254" parent="209" name="user_projects_users_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>plumbusx</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -1005,7 +1052,39 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="245" parent="208" name="user_roles_roles_id_fk">
+    <foreign-key id="255" parent="209" name="user_projects_projects_id_fk">
+      <ColNames>project_id</ColNames>
+      <RefSchemaName>plumbusx</RefSchemaName>
+      <RefTableName>projects</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="256" parent="210" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="210" name="role_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="258" parent="210" name="user_roles_users_id_fk">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="259" parent="210" name="user_roles_roles_id_fk">
+      <ColNames>role_id</ColNames>
+    </index>
+    <foreign-key id="260" parent="210" name="user_roles_users_id_fk">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>plumbusx</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="261" parent="210" name="user_roles_roles_id_fk">
       <ColNames>role_id</ColNames>
       <RefSchemaName>plumbusx</RefSchemaName>
       <RefTableName>roles</RefTableName>
@@ -1013,58 +1092,58 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="246" parent="209" name="id">
+    <column id="262" parent="211" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="209" name="username">
+    <column id="263" parent="211" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="209" name="password">
+    <column id="264" parent="211" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="209" name="lastname">
+    <column id="265" parent="211" name="lastname">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="209" name="course">
+    <column id="266" parent="211" name="course">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="209" name="group">
+    <column id="267" parent="211" name="group">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="209" name="post">
+    <column id="268" parent="211" name="post">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="209" name="firstname">
+    <column id="269" parent="211" name="firstname">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="254" parent="209" name="users_id_uindex">
+    <index id="270" parent="211" name="users_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="255" parent="209" name="PRIMARY">
+    <key id="271" parent="211" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="256" parent="209" name="users_id_uindex">
+    <key id="272" parent="211" name="users_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_id_uindex</UnderlyingIndexName>
     </key>

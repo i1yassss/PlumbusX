@@ -61,6 +61,7 @@ public class User {
         return meetings;
     }
 
+
     public void setMeetings(Set<Meeting> meetings) {
         this.meetings = meetings;
     }
@@ -77,6 +78,32 @@ public class User {
     @LazyCollection(value = LazyCollectionOption.FALSE)
     @JoinColumn(name = "author_id")
     private Set<Meeting> myMeetings;
+
+    @OneToMany
+    @LazyCollection(value = LazyCollectionOption.FALSE)
+    @JoinColumn(name = "author_id")
+    private Set<Project> myProjects;
+
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_projects", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"))
+    private Set<Project> projects;
+
+    public Set<Project> getMyProjects() {
+        return myProjects;
+    }
+
+    public void setMyProjects(Set<Project> myProjects) {
+        this.myProjects = myProjects;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
 
     public Integer getId() {
         return id;

@@ -38,12 +38,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/all-meetings">All Meetings</a></li>
                     <sec:authorize access="hasRole('ROLE_STUDENT')">
+                        <li><a href="/all-meetings">All Meetings</a></li>
                         <li><a href="/ungroup-meetings">New Meetings</a></li>
                         <li><a href="/list-users">Teachers</a></li>
                     </sec:authorize>
                     <sec:authorize access="hasRole('ROLE_TEACHER')">
+                        <li><a href="/all-meetings">All Meetings</a></li>
+                        <li><a href="/meetings">Add Meetings</a></li>
                         <li><a href="/list-users">Students</a></li>
                     </sec:authorize>
                     <c:if test="${pageContext.request.userPrincipal.name == null}">

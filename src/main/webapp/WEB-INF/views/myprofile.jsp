@@ -36,6 +36,9 @@
                     <tr>
                         <td><p><a href="<c:url value='/mymeetings/${user_info.id}'/>">Мои Встречи </a><p></td>
                     </tr>
+                    <tr>
+                        <td><p><a href="<c:url value='/myprojects/${user_info.id}'/>">Мои Проекты </a><p></td>
+                    </tr>
                 </table>
             </sec:authorize>
 

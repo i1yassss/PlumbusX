@@ -33,6 +33,8 @@
             <list>
                 <value>plumbusx.model.Competence</value>
                 <value>plumbusx.model.Meeting</value>
+                <value>plumbusx.model.Project</value>
+
             </list>
         </property>
         <property name="hibernateProperties">
@@ -52,7 +54,7 @@
     </bean>
 
 
-    <context:component-scan base-package="ru.itis.webappcdio.controller" />
+    <context:component-scan base-package="plumbusx.controller" />
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>

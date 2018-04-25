@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
-  User: 1
-  Date: 29.05.2017
-  Time: 23:53
+  User: IliasG
+  Date: 25.04.2018
+  Time: 12:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My meetings</title>
+    <title>My projects</title>
     <%@ include file="include/header.jsp" %>
 </head>
 <body>
@@ -18,15 +18,12 @@
         </div>
         <div class="col-xs-6 col-md-4">
 
-            <h3>Your Meetings</h3>
+            <h3>Your Projects</h3>
 
             <table class="table table-bordered">
-                <c:forEach items="${meetingsList2}" var="meetings">
+                <c:forEach items="${projectsList2}" var="projects">
                     <tr>
-                        <td>${meetings.mname}</td>
-                        <td>${meetings.typeofmeeting}</td>
-                        <td>${meetings.description}</td>
-                        <td>${meetings.timedate}</td>
+                        <td>${projects.project_name}</td>
                     </tr>
                 </c:forEach>
             </table>
